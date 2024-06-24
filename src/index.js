@@ -1,6 +1,12 @@
 const { hash } = window.location;
 const decryptedMsg = atob(hash.replace('#', ''));
-console.log(decryptedMsg)
+
+if (decryptedMsg) {
+  document.querySelector('#message-form').classList.add('hide');
+  document.querySelector('#message-show').classList.remove('hide');
+
+  document.querySelector('h1').innerHTML = decryptedMsg;
+}
 
 document.querySelector('form').addEventListener('submit', event => {
   event.preventDefault()
