@@ -1,3 +1,7 @@
+const { hash } = window.location;
+const decryptedMsg = atob(hash.replace('#', ''));
+console.log(decryptedMsg)
+
 document.querySelector('form').addEventListener('submit', event => {
   event.preventDefault()
 
